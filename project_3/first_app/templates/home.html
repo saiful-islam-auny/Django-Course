@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is home page</h1>
+    <h2>Programmer: {{name}}</h4>
+    <h2>Age: {{age}}</h4>
+    <h2>Numbers: {{list}}</h4>
+
+    <!-- Conditional part -->
+    {% if age >= 18 %}
+        <h2>You are adult</h2>
+    {% else %}
+        <h2>You are not adult</h2>
+    {% endif %}
+
+
+    {% comment %} For Loop {% endcomment %}
+    {% for i in courses %}
+    <h2>{{i.code}} {{i.name}} {{i.fee}}</h2>
+    {% endfor %}
+
+    {% comment %} join filter {% endcomment %}
+    <h2>{{ list | join:" - " }}</h2>
+
+    {% comment %} Date and time filter {% endcomment %}
+    <h2>{{ bd | date:"D d M Y" }}</h2>
+
+    {% comment %} no value filter {% endcomment %}
+    {{ val | default:"nothing here" }}
+
+    {% comment %} Length Filter {% endcomment %}
+    <h2>{{ val | length }}</h2>
+
+
+
+
+    
+</body>
+</html>
+
