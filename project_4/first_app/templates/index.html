@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+      {% comment %} table start {% endcomment %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for i in data %}
+          <tr>
+            <th scope="row">{{i.userId}}</th>
+            <td>{{i.id}}</td>
+            <td>{{i.title}}</td>
+            <td>@{{i.body}}</td>
+          </tr>
+          <tr>
+        {% endfor %}
+
+        </tbody>
+      </table>
+      {% comment %} table end {% endcomment %}
+
+
+    <h1>{{id.name}}</h1>
+    <img class="img" src="{% static 'images/bird2.jpg' %}" alt="">
+
+    {% endblock %}
